@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future Innovators Academy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+
+            /* 60 - 30 - 10 */
+            --primary: #F8FAFC;
+            /* 60% */
+            --secondary: #FFFFFF;
+            /* 30% */
+            --accent: #2563EB;
+            /* 10% */
+
+            --text: #0F172A;
+            --muted: #475569;
+            --border: #E2E8F0;
+
+            --success: #16A34A;
+
+            --shadow:
+                0 10px 30px rgba(37, 99, 235, 0.08);
+
+            --gradient:
+                linear-gradient(135deg,
+                    #2563EB,
+                    #3B82F6);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+
+            animation: fadeDown 0.8s ease;
+        }
+
+        .nav-inner {
+            padding: 20px 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text);
+            letter-spacing: -0.8px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-btn {
+            text-decoration: none;
+
+            background: var(--gradient);
+            color: white;
+
+            padding: 14px 20px;
+            border-radius: 14px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+
+            box-shadow: var(--shadow);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 100px 0 80px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(37, 99, 235, 0.08);
+
+            border-radius: 50%;
+
+            top: -200px;
+            right: -120px;
+
+            filter: blur(40px);
+
+            animation: floatBlob 6s infinite ease-in-out;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--accent);
+
+            border: 1px solid rgba(37, 99, 235, 0.12);
+
+            padding: 10px 18px;
+            border-radius: 999px;
+
+            margin-bottom: 26px;
+
+            font-size: 0.95rem;
+            font-weight: 600;
+
+            animation: fadeUp 0.8s ease;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 1.05;
+            letter-spacing: -2px;
+
+            margin-bottom: 24px;
+
+            animation: fadeUp 1s ease;
+        }
+
+        .gradient {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--muted);
+
+            margin-bottom: 36px;
+
+            max-width: 650px;
+
+            animation: fadeUp 1.2s ease;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+
+            animation: fadeUp 1.4s ease;
+        }
+
+        .btn-primary {
+            text-decoration: none;
+
+            background: var(--gradient);
+            color: white;
+
+            padding: 16px 28px;
+            border-radius: 16px;
+
+            font-weight: 700;
+
+            transition: 0.3s ease;
+
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-secondary {
+            text-decoration: none;
+
+            border: 1px solid var(--border);
+
+            color: var(--text);
+
+            padding: 16px 28px;
+            border-radius: 16px;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            transform: translateY(-4px);
+        }
+
+        /* HERO CARD */
+
+        .hero-card {
+            background: var(--secondary);
+
+            border: 1px solid var(--border);
+
+            padding: 34px;
+            border-radius: 28px;
+
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.06);
+
+            animation: fadeScale 1s ease;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            font-weight: 800;
+
+            margin-bottom: 28px;
+        }
+
+        .skill {
+            padding: 20px;
+            border-radius: 18px;
+
+            background: #F8FAFC;
+
+            border: 1px solid #EDF2F7;
+
+            margin-bottom: 18px;
+
+            transition: 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .skill h4 {
+            margin-bottom: 8px;
+        }
+
+        .skill p {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* SECTION */
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 18px;
+            letter-spacing: -1px;
+        }
+
+        .section-title p {
+            max-width: 760px;
+            margin: auto;
+
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 26px;
+
+            padding: 34px;
+
+            transition: 0.35s ease;
+
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .feature-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.08);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+
+            border-radius: 16px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(37, 99, 235, 0.08);
+
+            color: var(--accent);
+
+            font-weight: 800;
+            font-size: 1.2rem;
+
+            margin-bottom: 22px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 14px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 100px 0;
+        }
+
+        .cta-box {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 36px;
+
+            padding: 60px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+
+            align-items: center;
+
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.06);
+        }
+
+        .cta-box h2 {
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .cta-box p {
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* FORM */
+
+        form {
+            background: #F8FAFC;
+
+            border: 1px solid #E2E8F0;
+
+            border-radius: 28px;
+
+            padding: 32px;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+
+            padding: 16px;
+
+            border-radius: 14px;
+
+            border: 1px solid #CBD5E1;
+
+            background: white;
+
+            font-size: 1rem;
+
+            outline: none;
+
+            transition: 0.25s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            width: 100%;
+
+            background: var(--gradient);
+            color: white;
+
+            border: none;
+
+            padding: 16px;
+
+            border-radius: 14px;
+
+            font-size: 1rem;
+            font-weight: 800;
+
+            cursor: pointer;
+
+            transition: 0.3s ease;
+
+            position: relative;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+        }
+
+        button.loading {
+            pointer-events: none;
+            opacity: 0.85;
+        }
+
+        .loader {
+            width: 22px;
+            height: 22px;
+
+            border: 3px solid rgba(255, 255, 255, 0.35);
+            border-top: 3px solid white;
+
+            border-radius: 50%;
+
+            animation: spin 1s linear infinite;
+
+            display: none;
+
+            margin: auto;
+        }
+
+        .success {
+            margin-top: 18px;
+            color: var(--success);
+            font-weight: 700;
+            display: none;
+        }
+
+        /* SELECTIVE SECTION */
+
+        .selective-box {
+
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 40px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 34px;
+
+            padding: 50px;
+
+            box-shadow: 0 20px 60px rgba(15, 23, 42, 0.05);
+
+            align-items: center;
+        }
+
+        .small-badge {
+
+            display: inline-block;
+
+            background: rgba(37, 99, 235, 0.08);
+
+            color: var(--accent);
+
+            padding: 10px 18px;
+
+            border-radius: 999px;
+
+            font-weight: 700;
+
+            margin-bottom: 22px;
+        }
+
+        .selective-left h2 {
+
+            font-size: 3rem;
+
+            line-height: 1.1;
+
+            margin-bottom: 24px;
+        }
+
+        .selective-left p {
+
+            color: var(--muted);
+
+            line-height: 1.9;
+
+            font-size: 1.05rem;
+        }
+
+        .criteria-card {
+
+            background: #F8FAFC;
+
+            border: 1px solid #E2E8F0;
+
+            border-radius: 28px;
+
+            padding: 34px;
+        }
+
+        .criteria-card h3 {
+
+            margin-bottom: 22px;
+
+            font-size: 1.5rem;
+        }
+
+        .criteria-card ul {
+
+            list-style: none;
+        }
+
+        .criteria-card li {
+
+            padding: 14px 0;
+
+            border-bottom: 1px solid #E2E8F0;
+
+            color: var(--muted);
+
+            font-weight: 500;
+        }
+
+        .criteria-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* ABOUT SECTION */
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 24px;
+        }
+
+        .about-card {
+
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 28px;
+
+            padding: 34px;
+
+            transition: 0.35s ease;
+        }
+
+        .about-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.08);
+        }
+
+        .main-about {
+
+            grid-column: span 2;
+        }
+
+        .mentor-badge {
+
+            display: inline-block;
+
+            background: rgba(37, 99, 235, 0.08);
+
+            color: var(--accent);
+
+            padding: 10px 18px;
+
+            border-radius: 999px;
+
+            font-weight: 700;
+
+            margin-bottom: 22px;
+        }
+
+        .main-about h3 {
+
+            font-size: 2rem;
+
+            margin-bottom: 22px;
+
+            line-height: 1.2;
+        }
+
+        .main-about p {
+
+            color: var(--muted);
+
+            line-height: 1.9;
+
+            margin-bottom: 18px;
+        }
+
+        .stat-number {
+
+            font-size: 3rem;
+
+            font-weight: 800;
+
+            color: var(--accent);
+
+            margin-bottom: 18px;
+        }
+
+        .about-card h4 {
+
+            font-size: 1.3rem;
+
+            margin-bottom: 14px;
+        }
+
+        .about-card p {
+
+            color: var(--muted);
+
+            line-height: 1.8;
+        }
+
+        .wide-card {
+
+            grid-column: span 2;
+        }
+
+        .expertise-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 16px;
+
+            margin-top: 26px;
+        }
+
+        .expertise-item {
+
+            background: #F8FAFC;
+
+            border: 1px solid #E2E8F0;
+
+            padding: 18px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .expertise-item:hover {
+
+            background: rgba(37, 99, 235, 0.08);
+
+            color: var(--accent);
+
+            transform: translateY(-3px);
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:980px) {
+
+            .selective-box,
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .main-about,
+            .wide-card {
+
+                grid-column: span 1;
+            }
+
+            .expertise-grid {
+
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .selective-left h2 {
+
+                font-size: 2.2rem;
+            }
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: var(--muted);
+        }
+
+        /* ANIMATIONS */
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeScale {
+            from {
+                opacity: 0;
+                transform: scale(0.94);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatBlob {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* MENTOR HEADER SECTION */
+
+        .mentor-header {
+
+            position: relative;
+
+            padding: 40px 20px 20px;
+
+            text-align: center;
+        }
+
+        .mentor-badge-top {
+
+            display: inline-block;
+
+            background: rgba(37, 99, 235, 0.08);
+
+            color: var(--accent);
+
+            padding: 10px 20px;
+
+            border-radius: 999px;
+
+            font-weight: 700;
+
+            font-size: 0.95rem;
+
+            margin-bottom: 24px;
+
+            border: 1px solid rgba(37, 99, 235, 0.12);
+
+            animation: fadeUp 0.8s ease;
+        }
+
+        .mentor-header h2 {
+
+            font-size: 3.5rem;
+
+            line-height: 1.05;
+
+            margin-bottom: 18px;
+
+            letter-spacing: -2px;
+
+            animation: fadeUp 1s ease;
+        }
+
+        .mentor-header p {
+
+            max-width: 760px;
+
+            margin: auto;
+
+            color: var(--muted);
+
+            line-height: 1.9;
+
+            font-size: 1.1rem;
+
+            animation: fadeUp 1.2s ease;
+        }
+
+        /* IMAGE SECTION */
+
+        .mentor-image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 60px auto 0;
+            animation: fadeScale 1.2s ease;
+        }
+
+        .mentor-glow {
+
+            position: absolute;
+
+            inset: -20px;
+
+            background:
+                radial-gradient(circle,
+                    rgba(37, 99, 235, 0.20),
+                    transparent 70%);
+
+            filter: blur(30px);
+
+            z-index: 0;
+
+            animation: floatGlow 5s ease-in-out infinite;
+        }
+
+        .mentor-image {
+
+            width: 100%;
+
+            border-radius: 34px;
+
+            position: relative;
+
+            z-index: 2;
+
+            object-fit: cover;
+
+            border: 1px solid rgba(255, 255, 255, 0.7);
+
+            box-shadow:
+                0 30px 80px rgba(15, 23, 42, 0.12);
+
+            transition: 0.45s ease;
+        }
+
+        .mentor-image:hover {
+
+            transform:
+                translateY(-8px) scale(1.01);
+
+            box-shadow:
+                0 40px 100px rgba(37, 99, 235, 0.18);
+        }
+
+        /* OPTIONAL GLASS OVERLAY */
+
+        .mentor-image-wrapper::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: 18px;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+
+            border-radius: 28px;
+
+            border: 1px solid rgba(255, 255, 255, 0.28);
+
+            pointer-events: none;
+
+            z-index: 3;
+        }
+
+        /* FLOATING ANIMATION */
+
+        @keyframes floatGlow {
+
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(16px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px) {
+
+            .mentor-header h2 {
+
+                font-size: 2.5rem;
+            }
+
+            .mentor-header p {
+
+                font-size: 1rem;
+            }
+
+            .mentor-image-wrapper {
+
+                margin-top: 40px;
+            }
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:980px) {
+
+            h1 {
+                font-size: 2.9rem;
+            }
+
+            .hero-grid,
+            .grid-3,
+            .cta-box {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 36px;
+            }
+
+            .section-title h2,
+            .cta-box h2 {
+                font-size: 2.3rem;
+            }
+        }
+
+        /* =========================================
+   PREMIUM RESPONSIVE HEADER + MOBILE UX
+========================================= */
+
+        /* GLOBAL IMPROVEMENTS */
+
+        body {
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(92%, 1200px);
+        }
+
+        /* PREMIUM NAVBAR */
+
+        .navbar {
+
+            position: sticky;
+            top: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.78);
+
+            backdrop-filter: blur(16px);
+
+            -webkit-backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+
+            transition: 0.3s ease;
+        }
+
+        .nav-inner {
+
+            min-height: 84px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .logo {
+
+            font-size: 1.45rem;
+
+            font-weight: 800;
+
+            letter-spacing: -1px;
+
+            white-space: nowrap;
+        }
+
+        .nav-btn {
+
+            white-space: nowrap;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 52px;
+
+            padding: 14px 22px;
+
+            font-size: 0.95rem;
+
+            border-radius: 16px;
+
+            transition: 0.35s ease;
+        }
+
+        .nav-btn:hover {
+
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+
+            padding-top: 120px;
+            padding-bottom: 100px;
+
+            overflow: hidden;
+        }
+
+        .hero-grid {
+
+            align-items: center;
+        }
+
+        h1 {
+
+            font-size: clamp(2.8rem, 6vw, 5rem);
+
+            line-height: 1;
+
+            max-width: 760px;
+        }
+
+        .hero p {
+
+            font-size: 1.08rem;
+
+            max-width: 620px;
+        }
+
+        .hero-buttons {
+
+            margin-top: 10px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+
+            min-height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 1rem;
+
+            transition: 0.35s ease;
+        }
+
+        .btn-primary:hover,
+        .btn-secondary:hover {
+
+            transform: translateY(-3px);
+        }
+
+        /* HERO CARD */
+
+        .hero-card {
+
+            width: 100%;
+        }
+
+        .skill {
+
+            transition: 0.35s ease;
+        }
+
+        .skill:hover {
+
+            transform: translateY(-4px);
+        }
+
+        /* SECTION SPACING */
+
+        .section {
+
+            padding: 110px 0;
+        }
+
+        .section-title {
+
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+
+            line-height: 1.08;
+
+            letter-spacing: -2px;
+        }
+
+        .section-title p {
+
+            font-size: 1.05rem;
+
+            max-width: 760px;
+        }
+
+        /* GRID IMPROVEMENTS */
+
+        .grid-3 {
+
+            align-items: stretch;
+        }
+
+        .feature-card {
+
+            height: 100%;
+        }
+
+        /* SELECTIVE SECTION */
+
+        .selective-box {
+
+            gap: 50px;
+        }
+
+        .selective-left h2 {
+
+            font-size: clamp(2rem, 5vw, 3.4rem);
+        }
+
+        /* MENTOR SECTION */
+
+        .mentor-header {
+
+            padding-top: 20px;
+        }
+
+        .mentor-image-wrapper {
+
+            width: 100%;
+
+            max-width: 720px;
+        }
+
+        .mentor-image {
+
+            width: 100%;
+
+            aspect-ratio: 16/10;
+
+            object-fit: cover;
+        }
+
+        /* ABOUT SECTION */
+
+        .about-grid {
+
+            align-items: stretch;
+        }
+
+        .about-card {
+
+            height: 100%;
+        }
+
+        /* EXPERTISE */
+
+        .expertise-grid {
+
+            align-items: stretch;
+        }
+
+        .expertise-item {
+
+            min-height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+        }
+
+        /* CTA SECTION */
+
+        .cta-box {
+
+            overflow: hidden;
+        }
+
+        .cta-box h2 {
+
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+        }
+
+        /* FORM */
+
+        form {
+
+            width: 100%;
+        }
+
+        input,
+        textarea {
+
+            font-size: 16px;
+        }
+
+        /* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+        @media (max-width:1024px) {
+
+            .hero-grid,
+            .cta-box,
+            .selective-box {
+
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+
+                gap: 50px;
+            }
+
+            .cta-box {
+
+                gap: 40px;
+            }
+
+            .hero {
+
+                padding-top: 100px;
+            }
+
+            .hero-card {
+
+                max-width: 700px;
+
+                margin: auto;
+            }
+
+            .mentor-image-wrapper {
+
+                max-width: 100%;
+            }
+        }
+
+        /* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+        @media (max-width:768px) {
+
+            .container {
+
+                width: 92%;
+            }
+
+            /* NAVBAR */
+
+            .nav-inner {
+
+                min-height: 74px;
+
+                gap: 12px;
+            }
+
+            .logo {
+
+                font-size: 1.1rem;
+            }
+
+            .nav-btn {
+
+                padding: 12px 16px;
+
+                min-height: 46px;
+
+                font-size: 0.82rem;
+
+                border-radius: 12px;
+            }
+
+            /* HERO */
+
+            .hero {
+
+                padding-top: 80px;
+                padding-bottom: 70px;
+            }
+
+            h1 {
+
+                font-size: 2.5rem;
+
+                line-height: 1.05;
+
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+
+                font-size: 1rem;
+
+                line-height: 1.8;
+            }
+
+            .hero-buttons {
+
+                flex-direction: column;
+
+                width: 100%;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+
+                width: 100%;
+            }
+
+            .badge {
+
+                font-size: 0.82rem;
+
+                padding: 10px 14px;
+            }
+
+            /* CARDS */
+
+            .hero-card,
+            .feature-card,
+            .about-card,
+            .criteria-card {
+
+                padding: 24px;
+            }
+
+            /* SECTION */
+
+            .section {
+
+                padding: 80px 0;
+            }
+
+            .section-title {
+
+                margin-bottom: 45px;
+            }
+
+            .section-title h2 {
+
+                font-size: 2.2rem;
+
+                line-height: 1.1;
+            }
+
+            .section-title p {
+
+                font-size: 1rem;
+            }
+
+            /* GRIDS */
+
+            .grid-3,
+            .about-grid,
+            .expertise-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            /* SELECTIVE */
+
+            .selective-box {
+
+                padding: 28px;
+
+                border-radius: 28px;
+            }
+
+            .selective-left h2 {
+
+                font-size: 2rem;
+            }
+
+            /* MENTOR */
+
+            .mentor-header {
+
+                padding: 10px 0;
+            }
+
+            .mentor-header h2 {
+
+                font-size: 2.4rem;
+            }
+
+            .mentor-header p {
+
+                font-size: 1rem;
+            }
+
+            .mentor-image-wrapper {
+
+                margin-top: 36px;
+            }
+
+            .mentor-image {
+
+                border-radius: 24px;
+
+                aspect-ratio: auto;
+            }
+
+            /* ABOUT */
+
+            .main-about h3 {
+
+                font-size: 1.7rem;
+            }
+
+            /* CTA */
+
+            .cta {
+
+                padding: 80px 0;
+            }
+
+            .cta-box {
+
+                padding: 28px;
+
+                border-radius: 28px;
+            }
+
+            .cta-box h2 {
+
+                font-size: 2.2rem;
+            }
+
+            /* FORM */
+
+            form {
+
+                padding: 24px;
+            }
+
+            input,
+            textarea {
+
+                padding: 14px;
+            }
+        }
+
+        /* =========================================
+   SMALL MOBILE
+========================================= */
+
+        @media (max-width:480px) {
+
+            .logo {
+
+                font-size: 1rem;
+            }
+
+            .nav-btn {
+
+                font-size: 0.75rem;
+
+                padding: 10px 12px;
+            }
+
+            h1 {
+
+                font-size: 2.1rem;
+            }
+
+            .section-title h2 {
+
+                font-size: 1.9rem;
+            }
+
+            .cta-box h2 {
+
+                font-size: 1.9rem;
+            }
+
+            .mentor-header h2 {
+
+                font-size: 2rem;
+            }
+
+            .main-about h3 {
+
+                font-size: 1.45rem;
+            }
+
+            .stat-number {
+
+                font-size: 2.2rem;
+            }
+
+            .expertise-item {
+
+                min-height: 70px;
+
+                font-size: 0.92rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+
+            <div class="logo">
+                Future<span>Innovators</span>
+            </div>
+
+            <a href="#apply" class="nav-btn">
+                Book Free Session
+            </a>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container hero-grid">
+
+            <div>
+
+                <div class="badge">
+                    AI • Leadership • Innovation • Future Skills
+                </div>
+
+                <h1>
+                    Help Your Child Become
+                    <span class="gradient">
+                        Future Ready
+                    </span>
+                </h1>
+
+                <p>
+                    We help ambitious students learn AI, coding,
+                    communication, leadership, and innovation
+                    through live project-based mentorship designed
+                    for the future economy.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#apply" class="btn-primary">
+                        Book Free Strategy Session
+                    </a>
+
+                    <a href="#skills" class="btn-secondary">
+                        Explore Program
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="card-title">
+                    What Students Learn
+                </div>
+
+                <div class="skill">
+                    <h4>AI Project Building</h4>
+                    <p>
+                        Students build AI-powered projects,
+                        apps, and tools using modern technologies.
+                    </p>
+                </div>
+
+                <div class="skill">
+                    <h4>Communication & Confidence</h4>
+                    <p>
+                        Improve storytelling, presentations,
+                        and public speaking abilities.
+                    </p>
+                </div>
+
+                <div class="skill">
+                    <h4>Innovation Thinking</h4>
+                    <p>
+                        Develop creative problem-solving and
+                        founder-style thinking.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="section" id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Skills That Actually Matter In The AI Era
+                </h2>
+
+                <p>
+                    Most schools still focus on memorization.
+                    We help children become creators,
+                    thinkers, builders, and confident communicators.
+                </p>
+
+            </div>
+
+            <div class="grid-3">
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        AI
+                    </div>
+
+                    <h3>AI Literacy</h3>
+
+                    <p>
+                        Learn prompt engineering,
+                        AI tools, automation,
+                        and intelligent workflows.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        C
+                    </div>
+
+                    <h3>Coding & Apps</h3>
+
+                    <p>
+                        Build real projects,
+                        websites, games,
+                        and interactive applications.
+                    </p>
+
+                </div>
+
+                <div class="feature-card">
+
+                    <div class="feature-icon">
+                        L
+                    </div>
+
+                    <h3>Leadership</h3>
+
+                    <p>
+                        Build confidence,
+                        speaking skills,
+                        and innovation mindset.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SELECTIVE PROGRAM SECTION -->
+
+    <section class="section selective-section">
+
+        <div class="container">
+
+            <div class="selective-box">
+
+                <div class="selective-left">
+
+                    <div class="small-badge">
+                        Selective Mentorship Program
+                    </div>
+
+                    <h2>
+                        This Program Is Not For Everyone
+                    </h2>
+
+                    <p>
+                        We intentionally work with a limited number of students
+                        to ensure personalized mentorship, deep engagement,
+                        and meaningful transformation.
+
+                        Before enrollment, I personally conduct
+                        1-2 interactive sessions with each student
+                        to understand their curiosity, learning mindset,
+                        communication style, and long-term goals.
+
+                        If the fit feels right from both sides,
+                        we then proceed with a customized skill development journey.
+                    </p>
+
+                </div>
+
+                <div class="selective-right">
+
+                    <div class="criteria-card">
+
+                        <h3>
+                            Ideal Students
+                        </h3>
+
+                        <ul>
+
+                            <li>
+                                Curious about technology & AI
+                            </li>
+
+                            <li>
+                                Interested in building projects
+                            </li>
+
+                            <li>
+                                Open to creativity & communication
+                            </li>
+
+                            <li>
+                                Ready to think beyond school curriculum
+                            </li>
+
+                            <li>
+                                Motivated to grow consistently
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ABOUT TUTOR -->
+
+    <section class="section about-section">
+
+        <div class="container">
+
+            <div class="section-title mentor-header">
+
+                <div class="mentor-badge-top">
+                    Future-Ready Mentor • Builder • Entrepreneur
+                </div>
+
+                <h2>
+                    Meet Your Mentor
+                </h2>
+
+                <p>
+                    A multidisciplinary builder, educator, and entrepreneur
+                    helping students become future-ready creators.
+                </p>
+
+                <div class="mentor-image-wrapper">
+
+                    <div class="mentor-glow"></div>
+
+                    <img src="/pic1.webp" alt="Mentor Image" class="mentor-image" />
+
+                </div>
+
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-card main-about">
+
+                    <div class="mentor-badge">
+                        300+ Students Mentored
+                    </div>
+
+                    <h3>
+                        Building Future Innovators Through Real-World Experience
+                    </h3>
+
+                    <p>
+                        Unlike traditional tutors focused only on theory,
+                        my approach combines technology, innovation,
+                        leadership, entrepreneurship, and communication
+                        to help students build practical future-ready skills.
+                    </p>
+
+                    <p>
+                        Over the years, I’ve worked across multiple domains
+                        including software engineering, AI systems,
+                        operations, product strategy, leadership,
+                        and startup execution.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <div class="stat-number">
+                        1000+
+                    </div>
+
+                    <h4>
+                        Product Users Scaled
+                    </h4>
+
+                    <p>
+                        Built and scaled my own product from
+                        0 to 1000+ monthly users within 6 months.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <div class="stat-number">
+                        12+
+                    </div>
+
+                    <h4>
+                        Team Leadership Experience
+                    </h4>
+
+                    <p>
+                        Led teams across operations,
+                        outreach, execution, and innovation projects.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <div class="stat-number">
+                        Govt
+                    </div>
+
+                    <h4>
+                        Institutional Collaborations
+                    </h4>
+
+                    <p>
+                        Led outreach initiatives in partnership
+                        with government bodies and national-level institutions.
+                    </p>
+
+                </div>
+
+                <div class="about-card">
+
+                    <div class="stat-number">
+                        Overall
+                    </div>
+
+                    <h4>
+                        Escellence
+                    </h4>
+
+                    <p>
+                        Throughout their career, the mentor has discovered such tactics which can take your child to a
+                        next level in their EQ.
+                    </p>
+
+                </div>
+
+                <div class="about-card wide-card">
+
+                    <h3>
+                        Expertise & Background
+                    </h3>
+
+                    <div class="expertise-grid">
+
+                        <div class="expertise-item">
+                            Full Stack Software Developer
+                        </div>
+
+                        <div class="expertise-item">
+                            AI Engineer
+                        </div>
+
+                        <div class="expertise-item">
+                            Product Manager
+                        </div>
+
+                        <div class="expertise-item">
+                            Project Manager
+                        </div>
+
+                        <div class="expertise-item">
+                            Operations Lead
+                        </div>
+
+                        <div class="expertise-item">
+                            Entrepreneur
+                        </div>
+
+                        <div class="expertise-item">
+                            Growth Strategist
+                        </div>
+
+                        <div class="expertise-item">
+                            Student Mentor
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="cta" id="apply">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div>
+
+                    <h2>
+                        Book A Free Future Readiness Session
+                    </h2>
+
+                    <p>
+                        Discover how your child can become
+                        more confident, creative, and future-ready
+                        through AI, coding, communication,
+                        and innovation mentorship.
+                    </p>
+
+                </div>
+
+                <form id="leadForm">
+
+                    <div class="input-group">
+                        <input type="text" name="parentName" placeholder="Parent Name" required />
+                    </div>
+
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Email Address" required />
+                    </div>
+
+                    <div class="input-group">
+                        <input type="text" name="contact" placeholder="WhatsApp / Telegram / Contact Info (Optional)" />
+                    </div>
+
+                    <div class="input-group">
+                        <textarea name="requirements"
+                            placeholder="What goals or concerns do you have for your child? (Optional)"></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn">
+
+                        <span id="btnText">
+                            Book Free Session
+                        </span>
+
+                        <div class="loader" id="loader"></div>
+
+                    </button>
+
+                    <div class="success" id="successMessage">
+                        Your request has been submitted successfully.
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Future Innovators Academy
+    </footer>
+
+    <script>
+
+
+        const cards = document.querySelectorAll('.feature-card');
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add('show');
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.2
+        });
+
+        cards.forEach(card => {
+            observer.observe(card);
+        });
+
+        /* FORM */
+
+        const scriptURL =
+            "https://script.google.com/macros/s/AKfycbw4H45rfWQ4jpLEhLt9IWzL8tFCIDQJ_-A48hoqVl1FTWWUZV0OIjKPy7G4lNFzEyFZ8A/exec";
+
+        const form =
+            document.getElementById("leadForm");
+
+        const successMessage =
+            document.getElementById("successMessage");
+
+        const submitBtn =
+            document.getElementById("submitBtn");
+
+        const btnText =
+            document.getElementById("btnText");
+
+        const loader =
+            document.getElementById("loader");
+
+        form.addEventListener("submit", async (e) => {
+
+            e.preventDefault();
+
+            submitBtn.classList.add("loading");
+
+            btnText.style.display = "none";
+            loader.style.display = "block";
+
+            const formData =
+                new FormData(form);
+
+            try {
+
+                const response =
+                    await fetch(scriptURL, {
+                        method: "POST",
+                        body: formData
+                    });
+
+                const data =
+                    await response.json();
+
+                if (data.result === "success") {
+
+                    successMessage.style.display = "block";
+
+                    form.reset();
+
+                } else {
+
+                    alert("Something went wrong.");
+
+                }
+
+            } catch (error) {
+
+                alert("Error submitting form.");
+
+            }
+
+            loader.style.display = "none";
+
+            btnText.style.display = "block";
+
+            submitBtn.classList.remove("loading");
+
+        });
+
+    </script>
+
+</body>
+
+</html>
